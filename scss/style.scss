@@ -101,6 +101,7 @@ header {
         gap: 1rem;
 
         ul {
+            flex: 0 0 auto;
             position: relative;
 
             img {
@@ -114,30 +115,58 @@ header {
 
             &:hover {
                 text-decoration: underline;
+                opacity: 1;
             }
 
-            &:not(:last-child) {
-                margin-right: 40px;
+            img {
+                pointer-events: none;
+                transition: all 0.3s;
             }
+
+            .rotate {
+                transform: rotate(180deg);
+            }
+
+
         }
 
         &-list {
+            position: relative;
             top: 30px;
             left: -15px;
             position: absolute;
             overflow: hidden;
-            height: 0;
+            height: auto;
+            display: none;
+            height: auto;
+            padding: 1rem;
             border-radius: 8px;
-            line-height: 150%;
-            // padding: 1rem;
+            line-height: 200%;
             background-color: $whiteText;
             color: black;
-            width: 120%;
+            min-width: 170%;
+            width: max-content;
 
             li:hover {
                 cursor: pointer;
                 font-weight: bold;
             }
+        }
+
+    }
+
+    .dropDown {
+
+        .active {
+            width: auto;
+            display: inline-block;
+            // opacity: 1;
+            height: auto;
+            padding: 1rem 1rem;
+        }
+
+        &:not(:last-child) {
+            margin-right: 40px;
         }
     }
 
@@ -150,6 +179,7 @@ header {
 
         div {
             cursor: pointer;
+            flex: 0 0 auto;
         }
 
         .sign-up {
@@ -221,7 +251,7 @@ article {
         text-align: center;
     }
 
-    padding: 5rem 0;
+    padding: 10rem 0;
 
 }
 
@@ -234,6 +264,7 @@ section {
     }
 
     p {
+        display: inline;
         line-height: 150%;
     }
 }
@@ -242,13 +273,81 @@ section {
     position: relative;
     background: url(../images/illustration-editor-desktop.svg);
     background-repeat: no-repeat;
-    background-position: right;
-    background-size: 40%;
+    background-position: 55vw 55%;
+}
 
+.middle-article {
+    padding: 6rem 0;
+    position: relative;
+    color: $whiteText;
+    background: url(../images/bg-pattern-circles.svg), $gradientBGblue;
+    background-repeat: no-repeat;
+    background-position: -10vw 90%, 100%;
+    border-top-right-radius: 10vw;
+    border-bottom-left-radius: 10vw;
 
+    &::after {
+        position: absolute;
+        content: url(../images/illustration-phones.svg);
+        top: -15%;
+        left: 10vw;
+    }
 
-    section {
+    .container {
         position: relative;
         z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
     }
+
+}
+
+.bottom-article {
+    position: relative;
+    background: url(../images/illustration-laptop-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: -1vw 50%;
+    background-size: 800px;
+    display: flex;
+    justify-content: flex-end;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
+
+footer {
+    padding: 4rem 0 2rem;
+    background-color: $footerBG;
+    color: $footerText;
+    border-top-right-radius: 3rem;
+
+    .container {
+        display: flex;
+        gap: 16%;
+        justify-content: space-evenly;
+    }
+}
+
+.footer {
+
+    &__links {
+        &_heading {
+            margin-bottom: 2rem;
+            color: $whiteText;
+        }
+
+        li {
+            cursor: pointer;
+            margin-bottom: 1rem;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
 }
