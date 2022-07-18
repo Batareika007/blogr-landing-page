@@ -96,6 +96,11 @@ footer {
         width: 100%;
         justify-content: space-between;
         color: $whiteText;
+        border: 2px solid red;
+    }
+
+    &__nav {
+        gap: 26px;
     }
 
     &__text {
@@ -106,6 +111,64 @@ footer {
     &__botttom {
         justify-content: center;
     }
+}
+
+.logo {
+    max-width: 101px;
+    min-width: 74px;
+
+    img {
+        width: 100%;
+    }
+}
+
+.dropdown {
+    position: relative;
+
+    &__link {
+        cursor: pointer;
+        padding-left: 24px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__content {
+        background-color: $whiteText;
+        border-radius: 8px;
+        color: $heading;
+        padding: 35px 24px;
+        width: 170px;
+        max-width: 170px;
+        // display: none;
+        position: absolute;
+        overflow: hidden;
+        height: 0;
+        top: 60px;
+        transition: all 0.3s;
+
+        &:hover {
+            min-height: 100px;
+            height: 200px;
+            max-height: auto;
+        }
+
+        &_item {
+            cursor: pointer;
+
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+
+            &:hover {
+                text-decoration: double;
+                font-weight: 600;
+            }
+        }
+    }
+
+
 }
 
 main {

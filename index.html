@@ -29,49 +29,64 @@
 
 <body>
   <header class="header">
-    <div class="container">
 
+    <div class="container">
+      <!-- top header -->
       <div class="header__top flex-row">
+
         <div class="logo">
           <img src="images/logo.svg" alt="logo">
         </div>
+
         <div class="header__links flex-row">
 
           <nav class="header__nav flex-row">
             <!-- nav item -->
-            <div>
-
-              Product
-              <ul>
-                <li>Overview</li>
-                <li>Pricing</li>
-                <li>Marketplace</li>
-                <li>Features</li>
-                <li>Integrations</li>
-              </ul>
+            <div class="dropdown">
+              <div class="dropdown__inner">
+                <div class="dropdown__link">
+                  Product
+                </div>
+                <ul class="dropdown__content">
+                  <li class="dropdown__content_item">Overview</li>
+                  <li class="dropdown__content_item">Pricing</li>
+                  <li class="dropdown__content_item">Marketplace</li>
+                  <li class="dropdown__content_item">Features</li>
+                  <li class="dropdown__content_item">Integrations</li>
+                </ul>
+              </div>
             </div>
             <!-- nav item -->
-            <div>
+            <div class="dropdown">
 
-              Company
-              <ul>
-                <li>About</li>
-                <li>Team</li>
-                <li>Blog</li>
-                <li>Careers</li>
+              <div class="dropdown__link">
+                Company
+              </div>
+
+              <ul class="dropdown__content">
+                <li class="dropdown__content_item">About</li>
+                <li class="dropdown__content_item">Team</li>
+                <li class="dropdown__content_item">Blog</li>
+                <li class="dropdown__content_item">Careers</li>
               </ul>
+
             </div>
             <!-- nav item -->
-            <div>
-
-              Connect
-              <ul>
-                <li>Contact</li>
-                <li>Newsletter</li>
-                <li>LinkedIn</li>
+            <div class="dropdown">
+              <div class="dropdown__link">
+                Connect
+              </div>
+              <ul class="dropdown__content">
+                <li class="dropdown__content_item">Contact</li>
+                <li class="dropdown__content_item">Newsletter</li>
+                <li class="dropdown__content_item">LinkedIn</li>
               </ul>
             </div>
           </nav>
+
+
+
+
 
           <ul class="header__nav flex-row">
             <li class="header__nav_login">Login</li>
@@ -82,7 +97,7 @@
         </div>
       </div>
 
-
+      <!-- top main text -->
       <div class="header__text">
         <h1>
           A modern publishing platform
@@ -92,10 +107,12 @@
         </p>
       </div>
 
+      <!-- bottom header -->
       <div class="header__botttom flex-row">
         <div class="header__bottom_free">Start for Free</div>
         <div class="header__bottom_info">Learn More</div>
       </div>
+
     </div>
   </header>
 
