@@ -21,6 +21,13 @@
   background: rgba(0, 0, 255, 0.1);
 }
 
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
 img {
   border-style: none;
   -o-object-fit: cover;
@@ -86,6 +93,7 @@ body {
 .container {
   max-width: 1120px;
   margin: 0 auto;
+  padding: 0 2%;
 }
 
 header,
@@ -94,8 +102,18 @@ footer {
 }
 
 .header {
-  background: -webkit-gradient(linear, left top, right top, from(hsl(13deg, 100%, 72%)), to(hsl(353deg, 100%, 62%)));
-  background: linear-gradient(90deg, hsl(13deg, 100%, 72%), hsl(353deg, 100%, 62%));
+  background: url(../images/bg-pattern-intro-desktop.svg), -webkit-gradient(linear, left top, right top, from(hsl(13deg, 100%, 72%)), to(hsl(353deg, 100%, 62%)));
+  background: url(../images/bg-pattern-intro-desktop.svg), linear-gradient(90deg, hsl(13deg, 100%, 72%), hsl(353deg, 100%, 62%));
+  background-size: 100% cover;
+  background-repeat: no-repeat;
+  background-position: 25% 50%;
+}
+.header__top {
+  padding-top: 64px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 135px;
 }
 .header__links {
   width: 100%;
@@ -103,24 +121,72 @@ footer {
       -ms-flex-pack: justify;
           justify-content: space-between;
   color: hsl(0deg, 0%, 100%);
-  border: 2px solid red;
 }
 .header__nav {
   gap: 26px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header__nav_login {
+  font-weight: 700;
+}
+.header__nav_signUp {
+  background-color: hsl(0deg, 0%, 100%);
+  color: hsl(356deg, 100%, 66%);
+}
+.header__nav_signUp:hover {
+  background: hsl(355deg, 100%, 74%);
+  color: hsl(0deg, 0%, 100%);
+}
+.header__btn {
+  min-width: 140px;
+  padding: 16px 0;
+  border-radius: 50px;
+  font-weight: 700;
 }
 .header__text {
   text-align: center;
   color: hsl(0deg, 0%, 100%);
+  font-family: "Overpass", sans-serif;
+  margin-bottom: 50px;
 }
-.header__botttom {
+.header__text h1 {
+  font-size: 63px;
+  margin-bottom: 32px;
+}
+.header__text p {
+  font-size: 19px;
+}
+.header__bottom {
+  font-weight: 700;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-bottom: 156px;
+  gap: 1rem;
+}
+.header__bottom_free {
+  background-color: hsl(0deg, 0%, 100%);
+  color: hsl(356deg, 100%, 66%);
+}
+.header__bottom_free:hover {
+  background-color: hsl(355deg, 100%, 74%);
+  color: hsl(0deg, 0%, 100%);
+}
+.header__bottom_info {
+  border: 1px solid hsl(0deg, 0%, 100%);
+  color: hsl(0deg, 0%, 100%);
+}
+.header__bottom_info:hover {
+  color: hsl(355deg, 100%, 74%);
+  background-color: hsl(0deg, 0%, 100%);
 }
 
 .logo {
   max-width: 101px;
   min-width: 74px;
+  margin-right: 64px;
 }
 .logo img {
   width: 100%;
@@ -136,6 +202,12 @@ footer {
 .dropdown__link:hover {
   text-decoration: underline;
 }
+.dropdown__hiden-links {
+  height: 0;
+  position: absolute;
+  overflow: hidden;
+  top: 26px;
+}
 .dropdown__content {
   background-color: hsl(0deg, 0%, 100%);
   border-radius: 8px;
@@ -143,17 +215,6 @@ footer {
   padding: 35px 24px;
   width: 170px;
   max-width: 170px;
-  position: absolute;
-  overflow: hidden;
-  height: 0;
-  top: 60px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.dropdown__content:hover {
-  min-height: 100px;
-  height: 200px;
-  max-height: auto;
 }
 .dropdown__content_item {
   cursor: pointer;
@@ -169,4 +230,29 @@ footer {
 
 main {
   font-family: "Overpass", sans-serif;
+}
+
+footer {
+  background: hsl(240deg, 10%, 16%);
+  font-family: "Ubuntu", sans-serif;
+  color: hsl(240deg, 2%, 79%);
+}
+footer .footer__inner {
+  padding: 67px 0 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+footer .footer__links_heading {
+  color: hsl(0deg, 0%, 100%);
+  margin-bottom: 40px;
+}
+footer .footer__links ul li:hover {
+  text-decoration: underline;
+}
+footer .footer__links ul li:not(:last-child) {
+  margin-bottom: 20px;
 }

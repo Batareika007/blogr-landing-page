@@ -33,33 +33,32 @@ font: ubuntu
 550px
 
 # ------------------ section 2 --------------------
-
-# heading  
+## heading  
 overpass
 40px // 36px
 500 
 
-# text
+## text
 size 16px 
 fweight 400
 
 # ------------------ section 3 --------------------
 
-# heading
+## heading
 overpass
 27px // 24px
 500
-# text
+## text
 16px 300
 
 # --------------- footer ----------------
 
-# logo 
+## logo 
 101*41  // 90 * 35
 
-# links heading
+## links heading
 Ubuntu 
 16px 700
 
-# links a href
+## links a href
 16px 400
