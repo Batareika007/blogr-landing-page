@@ -107,6 +107,7 @@ footer {
   background-size: 100% cover;
   background-repeat: no-repeat;
   background-position: 25% 50%;
+  border-bottom-left-radius: 100px;
 }
 .header__top {
   padding-top: 64px;
@@ -228,10 +229,75 @@ footer {
   font-weight: 600;
 }
 
+/* --------- main -----------*/
 main {
   font-family: "Overpass", sans-serif;
 }
 
+.main__top {
+  padding-top: 160px;
+  padding-bottom: 260px;
+  background: url(../images/illustration-editor-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: 120% center;
+}
+.main__top_header {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 110px;
+}
+
+.section__content {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 540px;
+          flex: 0 1 540px;
+}
+.section__content h3 {
+  font-size: 27px;
+  margin-bottom: 40px;
+}
+.section__content p {
+  line-height: 175%;
+}
+.section__content section:first-child {
+  margin-bottom: 50px;
+}
+
+.main__middle .section,
+.main__bottom .section {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+.main__middle h3,
+.main__bottom h3 {
+  font-size: 40px;
+  letter-spacing: -0.03em;
+}
+
+.main__middle {
+  padding: 112px 0;
+  color: hsl(0deg, 0%, 100%);
+  background: url(../images/bg-pattern-circles.svg), -webkit-gradient(linear, left top, right top, from(hsl(237deg, 17%, 21%)), to(hsl(237deg, 23%, 32%)));
+  background: url(../images/bg-pattern-circles.svg), linear-gradient(90deg, hsl(237deg, 17%, 21%), hsl(237deg, 23%, 32%));
+  background-repeat: no-repeat;
+  background-size: 70%, 100%;
+  background-position: -50% 80%;
+}
+
+.main__bottom {
+  padding: 309px 0;
+  background: url(../images/illustration-laptop-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: 50%;
+  color: inherit;
+}
+
+/* ---------- footer ---------*/
 footer {
   background: hsl(240deg, 10%, 16%);
   font-family: "Ubuntu", sans-serif;

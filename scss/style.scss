@@ -99,6 +99,7 @@ footer {
     background-size: 100% cover;
     background-repeat: no-repeat;
     background-position: 25% 50%;
+    border-bottom-left-radius: 100px;
 
     &__top {
         padding-top: 64px;
@@ -240,10 +241,83 @@ footer {
 
 }
 
+/* --------- main -----------*/
+
 main {
     font-family: $Ovetpass;
 }
 
+.main__top {
+    padding-top: 160px;
+    padding-bottom: 260px;
+    background: url(../images/illustration-editor-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 120% center;
+
+    &_header {
+        text-align: center;
+        font-size: 48px;
+        font-weight: 600;
+        margin-bottom: 110px;
+    }
+
+}
+
+.section {
+
+    &__content {
+        flex: 0 1 540px;
+
+        h3 {
+            font-size: 27px;
+            margin-bottom: 40px;
+        }
+
+        p {
+            line-height: 175%;
+        }
+
+        section:first-child {
+            margin-bottom: 50px;
+        }
+
+    }
+}
+
+.main__middle,
+.main__bottom {
+    .section {
+        flex-direction: row-reverse;
+    }
+
+    h3 {
+        font-size: 40px;
+        letter-spacing: -0.03em;
+    }
+}
+
+.main__middle {
+    padding: 112px 0;
+    color: $whiteText;
+    background: url(../images/bg-pattern-circles.svg),
+        $gradientBGblue;
+    background-repeat: no-repeat;
+    background-size: 70%,
+        100%;
+    background-position: -50% 80%;
+}
+
+.main__bottom {
+    padding: 309px 0;
+    background: url(../images/illustration-laptop-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-size: 50%;
+    color: inherit;
+}
+
+/* ---------- footer ---------*/
 footer {
     background: $footerBG;
     font-family: $Ubuntu;
