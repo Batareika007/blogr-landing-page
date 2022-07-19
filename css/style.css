@@ -93,7 +93,7 @@ body {
 .container {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 0 2%;
+  padding: 0 20px;
 }
 
 header,
@@ -101,6 +101,7 @@ footer {
   font-family: "Ubuntu", sans-serif;
 }
 
+/* -------------- header --------------- */
 .header {
   background: url(../images/bg-pattern-intro-desktop.svg), -webkit-gradient(linear, left top, right top, from(hsl(13deg, 100%, 72%)), to(hsl(353deg, 100%, 62%)));
   background: url(../images/bg-pattern-intro-desktop.svg), linear-gradient(90deg, hsl(13deg, 100%, 72%), hsl(353deg, 100%, 62%));
@@ -198,13 +199,13 @@ footer {
 }
 .dropdown__link {
   cursor: pointer;
-  padding-left: 24px;
 }
 .dropdown__link:hover {
   text-decoration: underline;
 }
 .dropdown__hiden-links {
   height: 0;
+  left: -24px;
   position: absolute;
   overflow: hidden;
   top: 26px;
@@ -232,6 +233,9 @@ footer {
 /* --------- main -----------*/
 main {
   font-family: "Overpass", sans-serif;
+}
+main h3 {
+  letter-spacing: -0.03em;
 }
 
 .main__top {
@@ -275,7 +279,6 @@ main {
 .main__middle h3,
 .main__bottom h3 {
   font-size: 40px;
-  letter-spacing: -0.03em;
 }
 
 .main__middle {
@@ -286,6 +289,18 @@ main {
   background-repeat: no-repeat;
   background-size: 70%, 100%;
   background-position: -50% 80%;
+  position: relative;
+  border-radius: 0 100px 0 100px;
+}
+.main__middle .section__content {
+  z-index: 10;
+}
+.main__middle .illustration {
+  width: 40%;
+  position: absolute;
+  top: -10%;
+  left: 10%;
+  z-index: 0;
 }
 
 .main__bottom {
@@ -296,29 +311,112 @@ main {
   background-size: 50%;
   color: inherit;
 }
+.main__bottom .section h3 {
+  font-size: 27px;
+  color: hsl(208deg, 49%, 24%);
+}
+.main__bottom .section p {
+  color: hsl(207deg, 13%, 34%);
+}
 
 /* ---------- footer ---------*/
 footer {
   background: hsl(240deg, 10%, 16%);
   font-family: "Ubuntu", sans-serif;
   color: hsl(240deg, 2%, 79%);
+  border-radius: 0 100px 0 0;
 }
 footer .footer__inner {
   padding: 67px 0 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 190px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+footer .footer__logo {
+  margin-right: 0;
 }
 footer .footer__links_heading {
   color: hsl(0deg, 0%, 100%);
   margin-bottom: 40px;
+}
+footer .footer__links ul li {
+  cursor: pointer;
 }
 footer .footer__links ul li:hover {
   text-decoration: underline;
 }
 footer .footer__links ul li:not(:last-child) {
   margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .header__top {
+    text-align: center;
+  }
+  .header__links {
+    position: absolute;
+    top: 125px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    width: 80%;
+    background-color: hsl(0deg, 0%, 100%);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    color: hsl(207deg, 13%, 34%);
+    border-radius: 8px;
+    padding: 0 24px;
+  }
+  .header__nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 26px 0;
+  }
+  .header__nav:first-child {
+    border-bottom: 1px solid hsla(240deg, 3%, 79%, 0.5);
+  }
+  .header__nav_signUp {
+    color: hsl(0deg, 0%, 100%);
+    background: -webkit-gradient(linear, left top, right top, from(hsl(13deg, 100%, 72%)), to(hsl(353deg, 100%, 62%)));
+    background: linear-gradient(90deg, hsl(13deg, 100%, 72%), hsl(353deg, 100%, 62%));
+  }
+  .dropdown {
+    width: 100%;
+  }
+  .dropdown__link {
+    color: hsl(208deg, 49%, 24%);
+    font-weight: 700;
+  }
+  .dropdown__link img {
+    content: url("../images/icon-arrow-dark.svg");
+  }
+  .dropdown__link:hover {
+    text-decoration: none;
+  }
+  .dropdown__hiden-links {
+    margin-top: 1rem;
+    position: relative;
+    left: 0;
+    top: 0;
+    background: hsla(240deg, 3%, 79%, 0.5);
+    border-radius: 8px;
+  }
+  .dropdown__content {
+    width: auto;
+    margin: 0 auto;
+    padding: 1rem 0;
+    color: hsl(207deg, 13%, 34%);
+    font-weight: 500;
+    background: none;
+  }
 }

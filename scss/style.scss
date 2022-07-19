@@ -85,7 +85,7 @@ body {
 .container {
     max-width: 1120px;
     margin: 0 auto;
-    padding: 0 2%;
+    padding: 0 20px;
 
 }
 
@@ -93,6 +93,8 @@ header,
 footer {
     font-family: $Ubuntu;
 }
+
+/* -------------- header --------------- */
 
 .header {
     background: url(../images/bg-pattern-intro-desktop.svg), $gradientBGred;
@@ -201,7 +203,6 @@ footer {
 
     &__link {
         cursor: pointer;
-        padding-left: 24px;
 
         &:hover {
             text-decoration: underline;
@@ -210,6 +211,7 @@ footer {
 
     &__hiden-links {
         height: 0;
+        left: -24px;
         position: absolute;
         overflow: hidden;
         top: 26px;
@@ -245,6 +247,10 @@ footer {
 
 main {
     font-family: $Ovetpass;
+
+    h3 {
+        letter-spacing: -0.03em;
+    }
 }
 
 .main__top {
@@ -293,7 +299,6 @@ main {
 
     h3 {
         font-size: 40px;
-        letter-spacing: -0.03em;
     }
 }
 
@@ -303,9 +308,23 @@ main {
     background: url(../images/bg-pattern-circles.svg),
         $gradientBGblue;
     background-repeat: no-repeat;
-    background-size: 70%,
-        100%;
+    background-size: 70%, 100%;
     background-position: -50% 80%;
+    position: relative;
+    border-radius: 0 100px 0 100px;
+
+    .section__content {
+        z-index: 10;
+    }
+
+    .illustration {
+        width: 40%;
+        position: absolute;
+        top: -10%;
+        left: 10%;
+        z-index: 0;
+    }
+
 }
 
 .main__bottom {
@@ -315,6 +334,17 @@ main {
     background-position: 0 50%;
     background-size: 50%;
     color: inherit;
+
+    .section {
+        h3 {
+            font-size: 27px;
+            color: $heading;
+        }
+
+        p {
+            color: $darkText;
+        }
+    }
 }
 
 /* ---------- footer ---------*/
@@ -322,12 +352,19 @@ footer {
     background: $footerBG;
     font-family: $Ubuntu;
     color: $footerText;
+    border-radius: 0 100px 0 0;
 
     .footer {
         &__inner {
             padding: 67px 0 80px;
             display: flex;
-            justify-content: space-evenly;
+            justify-content: center;
+            gap: 190px;
+            flex-wrap: wrap;
+        }
+
+        &__logo {
+            margin-right: 0;
         }
 
         &__links {
@@ -339,6 +376,7 @@ footer {
             }
 
             ul li {
+                cursor: pointer;
 
                 &:hover {
                     text-decoration: underline;
@@ -352,3 +390,85 @@ footer {
         }
     }
 }
+
+@media screen and (max-width:1440px) {}
+
+@media screen and (max-width:1024px) {}
+
+@media screen and (max-width:768px) {
+    .header__top {
+        text-align: center;
+    }
+
+    .header__links {
+        position: absolute;
+        top: 125px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 80%;
+
+        // display: flex;
+        background-color: $whiteText;
+        flex-direction: column;
+        color: $darkText;
+        border-radius: 8px;
+        padding: 0 24px;
+    }
+
+    .header__nav {
+        flex-direction: column;
+        padding: 26px 0;
+
+        &:first-child {
+            border-bottom: 1px solid hsla(240, 3%, 79%, 0.5);
+        }
+
+        &_signUp {
+            color: $whiteText;
+            background: $gradientBGred;
+
+        }
+    }
+
+    .dropdown {
+        width: 100%;
+
+        &__link {
+            color: $heading;
+            font-weight: 700;
+
+            img {
+                content: url("../images/icon-arrow-dark.svg");
+            }
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        &__hiden-links {
+            margin-top: 1rem;
+            position: relative;
+            // height: auto; // remove it
+            left: 0;
+            top: 0;
+            background: hsla(240, 3%, 79%, 0.5);
+            border-radius: 8px;
+        }
+
+        &__content {
+            width: auto;
+            margin: 0 auto;
+            padding: 1rem 0;
+            color: $darkText;
+            font-weight: 500;
+            background: none;
+        }
+    }
+}
+
+@media screen and (max-width:425px) {}
+
+@media screen and (max-width:375px) {}
+
+@media screen and (max-width:320px) {}
