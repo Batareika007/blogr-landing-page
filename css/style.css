@@ -23,9 +23,10 @@
 
 a,
 a:active,
-a:visited {
+a:visited,
+a:hover {
   text-decoration: none;
-  color: inherit;
+  color: none;
 }
 
 img {
@@ -135,6 +136,7 @@ footer {
 }
 .header__nav_login {
   font-weight: 700;
+  color: hsl(0deg, 0%, 100%);
 }
 .header__nav_signUp {
   background-color: hsl(0deg, 0%, 100%);
