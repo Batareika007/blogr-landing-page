@@ -1,7 +1,30 @@
 const dropDownLink = document.querySelectorAll('.dropdown__inner');
 const dropDownArrow = document.querySelectorAll('.dropdown__link img');
 const dropDownContent = document.querySelectorAll('.dropdown__hiden-links');
+const hamburgerBtn = document.querySelector('.header__hamburger')
+const hamburgerBtnImg = document.querySelector('.header__hamburger_img')
 
+
+hamburgerBtn.addEventListener('click', () => {
+    if (hamburgerBtn.classList.contains('active')) {
+        hamburgerBtn.classList.remove('active')
+        gsap.to('.header__links', {
+            height: 0
+        })
+        gsap.to(hamburgerBtnImg, {
+            top: '0px'
+        })
+    } else {
+
+        hamburgerBtn.classList.add('active')
+        gsap.to(hamburgerBtnImg, {
+            top: '-23px'
+        })
+        gsap.to('.header__links', {
+            height: 'auto'
+        })
+    }
+})
 
 dropDownLink.forEach((element) => {
 
@@ -11,7 +34,7 @@ dropDownLink.forEach((element) => {
 
 
     element.addEventListener('click', (e) => {
-        // console.log(element);
+        console.log(e.target);
 
 
         let arrow = e.target.querySelector('img');
@@ -43,7 +66,7 @@ dropDownLink.forEach((element) => {
             closeContent()
         } else {
             dropDownLink.forEach((element) => {
-                console.log(element)
+                // console.log(element)
                 element.classList.remove('active')
                 gsap.to(dropDownArrow, {
                     rotate: '0deg'

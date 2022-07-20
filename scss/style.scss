@@ -108,6 +108,7 @@ footer {
         align-items: center;
         margin-bottom: 135px;
         // align-self: center;
+        justify-content: space-between;
     }
 
     &__links {
@@ -142,6 +143,25 @@ footer {
         font-weight: 700;
     }
 
+    &__hamburger {
+        cursor: pointer;
+        display: none;
+        overflow: hidden;
+
+        &_img {
+            width: 30px;
+            height: 20px;
+            position: relative;
+            top: 0;
+            // top: -23px; -- to hide x humbuger
+
+            img {
+                width: auto;
+                height: 100%;
+            }
+        }
+    }
+
     &__text {
         text-align: center;
         color: $whiteText;
@@ -164,6 +184,7 @@ footer {
         justify-content: center;
         padding-bottom: 156px;
         gap: 1rem;
+        flex-wrap: wrap;
 
         &_free {
             background-color: $whiteText;
@@ -206,6 +227,10 @@ footer {
 
         &:hover {
             text-decoration: underline;
+        }
+
+        img {
+            pointer-events: none;
         }
     }
 
@@ -309,7 +334,7 @@ main {
         $gradientBGblue;
     background-repeat: no-repeat;
     background-size: 70%, 100%;
-    background-position: -50% 80%;
+    background-position: -50% 80%, 100%;
     position: relative;
     border-radius: 0 100px 0 100px;
 
@@ -396,42 +421,63 @@ footer {
 @media screen and (max-width:1024px) {}
 
 @media screen and (max-width:768px) {
-    .header__top {
-        text-align: center;
-    }
 
-    .header__links {
-        position: absolute;
-        top: 125px;
-        left: 50%;
-        transform: translate(-50%, 0);
-        width: 80%;
+    .header {
 
-        // display: flex;
-        background-color: $whiteText;
-        flex-direction: column;
-        color: $darkText;
-        border-radius: 8px;
-        padding: 0 24px;
-    }
-
-    .header__nav {
-        flex-direction: column;
-        padding: 26px 0;
-
-        &:first-child {
-            border-bottom: 1px solid hsla(240, 3%, 79%, 0.5);
+        &__top {
+            text-align: center;
         }
 
-        &_signUp {
-            color: $whiteText;
-            background: $gradientBGred;
+        &__links {
+            position: absolute;
+            top: 125px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: 80%;
+            background-color: $whiteText;
+            flex-direction: column;
+            color: $darkText;
+            border-radius: 8px;
+            padding: 0 24px;
+            height: 0;
+            overflow: hidden;
+        }
 
+        &__nav {
+            flex-direction: column;
+            padding: 26px 0;
+
+            &:first-child {
+                border-bottom: 1px solid hsla(240, 3%, 79%, 0.5);
+            }
+
+            &_signUp {
+                color: $whiteText;
+                background: $gradientBGred;
+
+            }
+        }
+
+        &__hamburger {
+            display: block;
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        &__bottom {
+            font-size: 14px;
         }
     }
 
     .dropdown {
         width: 100%;
+        font-size: 18px;
 
         &__link {
             color: $heading;
@@ -463,6 +509,78 @@ footer {
             color: $darkText;
             font-weight: 500;
             background: none;
+        }
+    }
+
+    .main {
+        text-align: center;
+
+        &__top {
+            background-position: 50% 15%;
+            background-size: 80%;
+            padding-top: 90px;
+
+            &_header {
+                font-size: 24px;
+                margin-bottom: 100%;
+            }
+        }
+
+        .section__content {
+            flex: 0 1 100%;
+
+            h3 {
+                font-size: 24px;
+            }
+        }
+
+        &__middle {
+            padding: 200px 0 100px;
+            background-size: 160%, 100%;
+            background-position: 50% -200px, 100%;
+
+
+
+            .illustration {
+                width: 100%;
+                left: 0;
+                top: -120px;
+
+                img {
+                    width: 50%;
+                }
+            }
+
+            .section__content {
+
+                section:first-child {
+                    margin-bottom: 0;
+                }
+
+                h3 {
+                    font-size: 36px;
+                }
+            }
+        }
+
+        &__bottom {
+            padding: 100% 0 20%;
+            background-position: 50% 5%;
+            background-size: 100%;
+        }
+    }
+
+    footer {
+
+        .footer {
+            &__inner {
+                gap: 4rem;
+                text-align: center;
+            }
+
+            &__links {
+                width: 100%;
+            }
         }
     }
 }

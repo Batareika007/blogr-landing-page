@@ -116,6 +116,9 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 135px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .header__links {
   width: 100%;
@@ -147,6 +150,21 @@ footer {
   border-radius: 50px;
   font-weight: 700;
 }
+.header__hamburger {
+  cursor: pointer;
+  display: none;
+  overflow: hidden;
+}
+.header__hamburger_img {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  top: 0;
+}
+.header__hamburger_img img {
+  width: auto;
+  height: 100%;
+}
 .header__text {
   text-align: center;
   color: hsl(0deg, 0%, 100%);
@@ -167,6 +185,8 @@ footer {
           justify-content: center;
   padding-bottom: 156px;
   gap: 1rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .header__bottom_free {
   background-color: hsl(0deg, 0%, 100%);
@@ -202,6 +222,9 @@ footer {
 }
 .dropdown__link:hover {
   text-decoration: underline;
+}
+.dropdown__link img {
+  pointer-events: none;
 }
 .dropdown__hiden-links {
   height: 0;
@@ -288,7 +311,7 @@ main h3 {
   background: url(../images/bg-pattern-circles.svg), linear-gradient(90deg, hsl(237deg, 17%, 21%), hsl(237deg, 23%, 32%));
   background-repeat: no-repeat;
   background-size: 70%, 100%;
-  background-position: -50% 80%;
+  background-position: -50% 80%, 100%;
   position: relative;
   border-radius: 0 100px 0 100px;
 }
@@ -374,6 +397,8 @@ footer .footer__links ul li:not(:last-child) {
     color: hsl(207deg, 13%, 34%);
     border-radius: 8px;
     padding: 0 24px;
+    height: 0;
+    overflow: hidden;
   }
   .header__nav {
     -webkit-box-orient: vertical;
@@ -390,8 +415,21 @@ footer .footer__links ul li:not(:last-child) {
     background: -webkit-gradient(linear, left top, right top, from(hsl(13deg, 100%, 72%)), to(hsl(353deg, 100%, 62%)));
     background: linear-gradient(90deg, hsl(13deg, 100%, 72%), hsl(353deg, 100%, 62%));
   }
+  .header__hamburger {
+    display: block;
+  }
+  .header h1 {
+    font-size: 32px;
+  }
+  .header p {
+    font-size: 14px;
+  }
+  .header__bottom {
+    font-size: 14px;
+  }
   .dropdown {
     width: 100%;
+    font-size: 18px;
   }
   .dropdown__link {
     color: hsl(208deg, 49%, 24%);
@@ -418,5 +456,56 @@ footer .footer__links ul li:not(:last-child) {
     color: hsl(207deg, 13%, 34%);
     font-weight: 500;
     background: none;
+  }
+  .main {
+    text-align: center;
+  }
+  .main__top {
+    background-position: 50% 15%;
+    background-size: 80%;
+    padding-top: 90px;
+  }
+  .main__top_header {
+    font-size: 24px;
+    margin-bottom: 100%;
+  }
+  .main .section__content {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+  .main .section__content h3 {
+    font-size: 24px;
+  }
+  .main__middle {
+    padding: 200px 0 100px;
+    background-size: 160%, 100%;
+    background-position: 50% -200px, 100%;
+  }
+  .main__middle .illustration {
+    width: 100%;
+    left: 0;
+    top: -120px;
+  }
+  .main__middle .illustration img {
+    width: 50%;
+  }
+  .main__middle .section__content section:first-child {
+    margin-bottom: 0;
+  }
+  .main__middle .section__content h3 {
+    font-size: 36px;
+  }
+  .main__bottom {
+    padding: 100% 0 20%;
+    background-position: 50% 5%;
+    background-size: 100%;
+  }
+  footer .footer__inner {
+    gap: 4rem;
+    text-align: center;
+  }
+  footer .footer__links {
+    width: 100%;
   }
 }
