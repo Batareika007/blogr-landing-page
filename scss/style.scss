@@ -20,11 +20,11 @@
 }
 
 a,
-a:active,
-a:visited,
-a:hover {
+a:hover,
+a:focus,
+a:active {
     text-decoration: none;
-    color: none;
+    color: inherit;
 }
 
 img {
@@ -451,6 +451,10 @@ footer {
 
             &:first-child {
                 border-bottom: 1px solid hsla(240, 3%, 79%, 0.5);
+            }
+
+            &_login {
+                color: $darkText;
             }
 
             &_signUp {

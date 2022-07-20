@@ -22,11 +22,11 @@
 }
 
 a,
-a:active,
-a:visited,
-a:hover {
+a:hover,
+a:focus,
+a:active {
   text-decoration: none;
-  color: none;
+  color: inherit;
 }
 
 img {
@@ -411,6 +411,9 @@ footer .footer__links ul li:not(:last-child) {
   }
   .header__nav:first-child {
     border-bottom: 1px solid hsla(240deg, 3%, 79%, 0.5);
+  }
+  .header__nav_login {
+    color: hsl(207deg, 13%, 34%);
   }
   .header__nav_signUp {
     color: hsl(0deg, 0%, 100%);
